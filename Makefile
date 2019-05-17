@@ -11,4 +11,3 @@ frontend:
 	docker-compose run frontend sh
 backend:
 	docker-compose run backend
-
