@@ -37,4 +37,4 @@ stop:
 
 #@ - debug: Debug apps
 debug:
-	@docker-compose run --service-ports backend sh
+	@docker-compose run --service-ports backend bash
