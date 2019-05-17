@@ -1,4 +1,7 @@
 FROM python:3.7-alpine
+
+RUN apk add bash make
+
 WORKDIR /root/
 
 # Upgrade to latest version of pip.
