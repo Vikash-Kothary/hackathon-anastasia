@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/theomessin/anastasia.wiki.git
+	branch = master
+	commit = df69253273254e71ab3793b3e7fd827dfa6741f3
+	parent = 25f8d32ac57ab6a395af20a78b3333ff58ea70d6
+	method = merge
+	cmdver = 0.4.0
