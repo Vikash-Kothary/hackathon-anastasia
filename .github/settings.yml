@@ -1,0 +1,12 @@
+repository:
+  name: anastasia
+  homepage: https://anastasia.infrahack.dev/
+  private: true
+  has_issues: true
+  has_projects: true
+  has_wiki: true
+  has_downloads: false
+  default_branch: master
+  allow_squash_merge: true
+  allow_merge_commit: false
+  allow_rebase_merge: false
