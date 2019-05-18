@@ -31,8 +31,7 @@ lint-backend:
 run-backend:
 	@cd ${BACKEND_CONTEXT}/ && \
 	pipenv run \
-	python src/main.py && \
-	${MAKE} clean-pyc
+	python src/main.py
 
 #@ - test-backend: Run tests.
 test-backend: lint-backend
@@ -42,20 +41,5 @@ develop-backend:
 	@cd ${BACKEND_CONTEXT}/ && \
 	pipenv run \
 	jupyter notebook --notebook-dir=./notebooks
-
-#@ - clean-backend: Remove python genenerated files
-clean-backend: clean-pyc clean-build
-
-clean-pyc:
-	@find . -type d -name '.pytext_cache' -exec rm --force --recursive {} +
-	@find . -type d -name '__pycache__' -exec rm --force --recursive {} +
-	@find . -name '*.pyc' -exec rm --force {} +
-	@find . -name '*.pyo' -exec rm --force {} +
-	#@name '*~' -exec rm --force  {} 
-
-clean-build:
-	@rm --force --recursive build/
-	@rm --force --recursive dist/
-	@rm --force --recursive *.egg-info
 
 #@ 

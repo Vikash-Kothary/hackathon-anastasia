@@ -15,4 +15,4 @@ COPY Pipfile.lock ./
 RUN pipenv install
 
 COPY Makefile ./
-CMD ["make", "run"]
+CMD ["/usr/bin/make", "run"]
