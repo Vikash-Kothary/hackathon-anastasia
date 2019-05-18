@@ -3,7 +3,7 @@ FROM python:3.7-alpine
 ENV PIPENV_VENV_IN_PROJECT=true
 ENV PIP_NO_CACHE_DIR=true
 
-RUN apk add bash make
+RUN apk add --no-cache bash bash-completion make
 
 WORKDIR /root/
 
