@@ -4,7 +4,7 @@
 #@ Commands:
 .PHONY: help build start stop frontend backend
 
-
+APP_NAME := nameless-shore-56366
 FRONTEND_CONTEXT := frontend
 -include ${FRONTEND_CONTEXT}/Makefile
 BACKEND_CONTEXT := backend
@@ -38,3 +38,9 @@ stop:
 #@ - debug: Debug apps
 debug:
 	@docker-compose run --service-ports backend bash
+
+deploy:
+	@heroku container:login && \
+	heroku container:push backend --app ${APP_NAME} && \
+	heroku container:release backend --app ${APP_NAME} && \
+	heroku open
