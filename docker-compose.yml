@@ -1,6 +1,5 @@
-version: '3.7'
+version: '3'
 services:
-
     ngrok:
       image: wernight/ngrok:latest
       ports:
@@ -11,10 +10,12 @@ services:
         - NGROK_PORT=backend:5000
     backend:
         build: ./backend
+        ports:
+          - 5000:5000
         volumes:
-            - ./storage:/root/storage
-            - ./backend/src:/root/src:ro
-    frontend:
-        build: ./frontend
-        volumes:
-            - ./frontend/src:/root/src:ro
+            - ./storage:/app/storage
+            - ./backend/src:/app/src:ro
+    # frontend:
+    #     build: ./frontend
+    #     volumes:
+    #         - ./frontend/src:/root/src:ro

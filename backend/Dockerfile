@@ -1,18 +1,15 @@
-FROM python:3.7-alpine
+FROM python:3.6
 
 ENV PIPENV_VENV_IN_PROJECT=true
 ENV PIP_NO_CACHE_DIR=true
 
-RUN apk add --no-cache bash bash-completion make
+#RUN apk add --no-cache bash
 
-WORKDIR /root/
-
-# Upgrade to latest version of pip.
-RUN pip install --upgrade pip && pip install pipenv
-
-# Copy and install all pip (python) requirements.
-COPY Pipfile.lock ./
-RUN pipenv install
+RUN mkdir /app
+WORKDIR /app
 
 COPY Makefile ./
-CMD ["/usr/bin/make", "run"]
+COPY requirements.txt ./
+
+RUN pip install -r requirements.txt
+CMD ["python", "src/main.py"]

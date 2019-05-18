@@ -37,7 +37,7 @@ stop:
 
 #@ - debug: Debug apps
 debug:
-	@docker-compose run --service-ports backend bash
+	@docker-compose run --rm --service-ports backend bash
 
 deploy:
 	@heroku container:login && \

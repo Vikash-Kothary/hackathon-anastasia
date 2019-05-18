@@ -20,7 +20,10 @@ help-backend:
 #@ - init-backend: Install requirements.
 init-backend:
 	@cd ${BACKEND_CONTEXT}/ && \
-	pipenv install --dev
+	python -m venv .venv && \
+	source .venv/bin/activate && \
+	pip install --upgrade pip && \
+	pip install -r requirements.txt
 
 lint-backend:
 	@cd ${BACKEND_CONTEXT}/ && \
@@ -42,9 +45,4 @@ develop-backend:
 	pipenv run \
 	jupyter lab --notebook-dir=./notebooks
 
-export-development-backend:
-	@cd ${BACKEND_CONTEXT}/ && \
-	pipenv run \
-	jupyter nbconvert --to script development.ipynb
 #@ 
-t
