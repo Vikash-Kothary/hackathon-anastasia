@@ -3,7 +3,7 @@
 main.py - Run the complete application.
 """
 
-from app import create_app
+from app import app
 # from db import create_db
 # from api import api
 from views import views
@@ -12,7 +12,6 @@ from views import views
 def main():
     """Run application
     """
-    app = create_app()
     # db = create_db()
     # db.create_tables()
     # app.register_blueprint(api)
