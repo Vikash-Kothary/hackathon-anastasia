@@ -40,6 +40,11 @@ test-backend: lint-backend
 develop-backend:
 	@cd ${BACKEND_CONTEXT}/ && \
 	pipenv run \
-	jupyter notebook --notebook-dir=./notebooks
+	jupyter lab --notebook-dir=./notebooks
 
+export-development-backend:
+	@cd ${BACKEND_CONTEXT}/ && \
+	pipenv run \
+	jupyter nbconvert --to script development.ipynb
 #@ 
+t
