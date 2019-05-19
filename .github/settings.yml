@@ -1,7 +1,7 @@
 repository:
   name: anastasia
   homepage: https://anastasia.infrahack.dev/
-  private: true
+  private: false
   has_issues: true
   has_projects: true
   has_wiki: true
