@@ -13,7 +13,7 @@ app = Flask(__name__, static_folder="./models", static_url_path="")
 #sess = Session()
 #sess.init_app(app)
 
-@app.route('/data.json')
+@app.route('/')
 def api():
     with open('./src/models/tiles.json') as file:
         data = json.load(file)
