@@ -3,17 +3,20 @@
 app.py - Create web server
 """
 
-from flask import Flask, jsonify
+from flask import Flask, session, jsonify
+#from flask.ext.session import Session
 import json
 
 app = Flask(__name__, static_folder="./models", static_url_path="")
+#SESSION_TYPE = 'filesystem'
+#app.config.from_object(__name__)
+#sess = Session()
+#sess.init_app(app)
 
 @app.route('/data.json')
 def api():
-    
     with open('./src/models/tiles.json') as file:
         data = json.load(file)
-    data = str(data)
-    return jsonify(dict(tiles=data))
+    return jsonify(data)
 
-app.run(host='0.0.0.0', port='5000')
+app.run(host='0.0.0.0', port='5000', debug=True)
